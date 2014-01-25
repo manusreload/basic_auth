@@ -10,9 +10,9 @@
  *
  * @author manus
  */
-include_once 'MysqlConnector.php';
-include_once 'User.php';
-include_once 'Constants.php';
+include_once __DIR__ . './MysqlConnector.php';
+include_once __DIR__ . './User.php';
+include_once __DIR__ . './Constants.php';
 
 class AuthCore {
 
@@ -70,11 +70,13 @@ class AuthCore {
                     Constants::USERS_COLUM_SURNAME => $surname,
                     Constants::USERS_COLUM_VERFICATIONCODE => $verfication_code,
                     Constants::USERS_COLUM_VERIFICATED => 0));
-                if ($this->sendValidationMail($user)) {
-                    return 0;
-                } else {
-                    return -1;
+                if (Config::EMAIL_VERIFICATION) {
+
+                    if (!$this->sendValidationMail($user)) {
+                        return -1;
+                    }
                 }
+                return 0;
             }
         } catch (Exception $e) {
             

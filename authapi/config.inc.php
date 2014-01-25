@@ -10,6 +10,7 @@ class Config {
     const DBCONNECTION_USER = 'root';
     const DBCONNECTION_PASS = 'password';
     const DBCONNECTION_TABLE = 'table';
+    const EMAIL_VERIFICATION = false;
     const EMAIL_NAME = "email@gmail.com";
     const EMAIL_PASS = "email_pass";
     const EMAIL_FROM = "Pass";

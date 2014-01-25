@@ -1,4 +1,4 @@
-<?php require_once "fragment/require-user.php"; ?><!DOCTYPE html>
+<?php require_once "fragment/session.php"; ?><!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
